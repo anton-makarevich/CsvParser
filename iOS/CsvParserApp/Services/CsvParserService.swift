@@ -1,13 +1,13 @@
-protocol HasCsvParserService {
+protocol HasCsvParserService: class {
 	var csvParserService: CsvParserServiceProtocol { get set }
 }
 
 protocol CsvParserServiceProtocol {
-	func parseProfiles(profilesData: String, completion: @escaping ([Profile])->Void)
+	func parseProfiles(profilesData: String) -> [Profile]
 }
 
 class CsvParserService: CsvParserServiceProtocol {
-	func parseProfiles(profilesData: String, completion: @escaping ([Profile]) -> Void) {
-		completion([])
+	func parseProfiles(profilesData: String) -> [Profile] {
+		return []
 	}
 }

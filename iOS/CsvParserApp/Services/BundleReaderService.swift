@@ -1,13 +1,13 @@
-protocol HasTextFileReaderService {
+protocol HasTextFileReaderService: class {
 	var textFileReaderService: TextFileReaderServiceProtocol { get set }
 }
 
 protocol TextFileReaderServiceProtocol {
-	func readFileContent(fileName: String, completion: @escaping (String) -> Void)
+	func readFileContent(fileName: String) -> String?
 }
 
 class BundleReaderService: TextFileReaderServiceProtocol {
-	func readFileContent(fileName: String, completion: @escaping (String) -> Void) {
-		completion("")
+	func readFileContent(fileName: String) -> String? {
+		return ""
 	}
 }

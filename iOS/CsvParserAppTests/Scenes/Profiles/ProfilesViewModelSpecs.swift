@@ -30,7 +30,7 @@ class ProfilesViewModelSpecs: QuickSpec {
 				sut = ProfilesViewModel(dependencies: ProfilesViewModelDependenciesMock())
 			}
 			
-			fit("gets profiles using profiles service") {
+			it("gets profiles using profiles service") {
 				var assignedProfiles: [ProfileViewModel] = []
 				sut.profiles.bind(listener: {
 					assignedProfiles = $0

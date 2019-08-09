@@ -1,4 +1,4 @@
-protocol CsvParserAppDependenciesProtocol: class,
+protocol CsvParserAppDependenciesProtocol:
 	HasCsvParserService,
 	HasCachingService,
 	HasProfilesService,
@@ -9,7 +9,7 @@ class CsvParserAppDependencies: CsvParserAppDependenciesProtocol {
 	
 	lazy var cachingService: CachingServiceProtocol = CachingService()
 	
-	lazy var profilesService: ProfilesServiceProtocol = ProfilesService()
+	lazy var profilesService: ProfilesServiceProtocol = ProfilesService(dependencies: self)
 	
 	lazy var textFileReaderService: TextFileReaderServiceProtocol = BundleReaderService()
 }
