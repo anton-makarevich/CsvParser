@@ -10,15 +10,21 @@ protocol CachingServiceProtocol {
 }
 
 class CachingService: CachingServiceProtocol {
-	private let cacheKey = NSString("Issues")
-	private let cache = NSCache<NSString,Wrapper<[Profile]>>()
+	private let cacheKey = "Issues"
+	private let userDefaults = UserDefaults.standard
 	
 	func cacheProfiles(_ profiles: [Profile]) {
-		cache.setObject(Wrapper(profiles), forKey: cacheKey)
+		if let encoded = try? JSONEncoder().encode(profiles) {
+			userDefaults.set(encoded, forKey: cacheKey)
+			userDefaults.synchronize()
+		}
 	}
 	
 	func getCachedProfiles() -> [Profile]? {
-		guard let cached = cache.object(forKey: cacheKey) else {return nil }
-		return cached.value
+		if let cached = userDefaults.data(forKey: cacheKey),
+			let profiles = try? JSONDecoder().decode([Profile].self, from: cached){
+			return profiles
+		}
+		return nil
 	}
 }
