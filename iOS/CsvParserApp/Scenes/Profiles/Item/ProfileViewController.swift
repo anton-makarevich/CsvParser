@@ -25,7 +25,10 @@ class ProfileViewController: UIViewController, ViewControllerProtocol {
 	}
 	
 	func unbindViewModel() {
-		
+		/* not used here
+		   but I want the protocol to force us having this method
+		   as generally we need it to cleanup bindings
+		   and prevent memory leaks */
 	}
 	
 	static func createWith(_ viewModel: ProfileViewModel) -> UIViewController? {

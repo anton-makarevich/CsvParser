@@ -1,6 +1,14 @@
-# About the assignment
+# CsvParserApp
 
-**iOS**
+# iOS
+
+**Tools and technologies**
+- Xcode 10.3
+- Swift 5
+- *Quick n Nimble* framework for unit testing
+- R.Swift for strongly typed resources
+
+**Architecture**
 
 The assignment has been done using MVVM pattern (with flow coordinator) using only stable technologies we can use in production. (no beta stuff like SwiftUi or Combine)
 
@@ -8,6 +16,8 @@ The app has 2 pages: the main page displaying the list of people with issues and
 
 MVVM structure (mostly `Common` folder) was copied from the template I created earlier and used in some previous projects. 
 `Services` and `Scenes` are parts related to assignment business logic and UI and were developed from scratch using TDD. UI parts (ViewControllers and Cells) are not covered by tests (even though it's possible it doesn't add any additional value as there is no actual code (only assigning of values from viemodels))
+
+**Code explanation**
 
 *Profiles ViewController*
 - Dispalys the list of profiles in tableview using generic DataSource (could be reused for any data).
@@ -41,7 +51,8 @@ Service returns data asyncronyously to not block UI thread
 *Caching Service*
 - Saves profile data locally to not parse csv file every time
 
-Current implementation uses the simplest possible approach - the servce is just a wrapper around UserDefaults as stores json serialized array of profiles, but if needed the same service could be implemented in many other ways (CoreData, SQLite, Realm etc)
+Current implementation uses the simplest possible approach - the service is just a wrapper around UserDefaults as stores json serialized array of profiles, but if needed the same service could be implemented in many other ways (CoreData, SQLite, Realm etc)
+As we use just a static file which never updates, there is no logic to 'refresh' cache, but it should be implemented in a real project
 
 Not covered with tests as it's basicly just a wrapper around iOS functionality
 
@@ -57,7 +68,9 @@ Not covered with tests as it's basicly just a wrapper around iOS functionality
 
 Only core functionality is implemented, it's not reliable and couldnt be used for generic purpose (for example it breaks if one of the entries is a string containig comma)
 
+In real application I would use some thirdparty component for parsing, but according to my understanding of the assignment this code should be written by me in this case
 
-**Android**
+
+# Android
 
 If needed Android app (in kotlin) can be implemented using exactly the same approach.

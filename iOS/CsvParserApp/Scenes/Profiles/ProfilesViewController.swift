@@ -37,7 +37,7 @@ class ProfilesViewController: UIViewController, ViewControllerProtocol {
 	}
 	
 	func unbindViewModel() {
-		
+		viewModel?.profiles.unbind()
 	}
 	
 	static func createWith(_ viewModel: ProfilesViewModel) -> UIViewController? {

@@ -13,8 +13,7 @@ final class ProfilesViewModel: ViewModelProtocol {
 	func getProfiles() {
 		isLoading.value = true
 		dependencies.profilesService.getProfiles { [weak self] result in
-			guard let strongSelf = self,
-				!result.isEmpty else { return }
+			guard let strongSelf = self else { return }
 			strongSelf.isLoading.value = false
 			strongSelf.profiles.value = result.map { ProfileViewModel(profile: $0) }
 		}
