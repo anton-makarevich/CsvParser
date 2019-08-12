@@ -22,7 +22,7 @@ class CachingService: CachingServiceProtocol {
 	
 	func getCachedProfiles() -> [Profile]? {
 		if let cached = userDefaults.data(forKey: cacheKey),
-			let profiles = try? JSONDecoder().decode([Profile].self, from: cached){
+			let profiles = try? JSONDecoder().decode([Profile].self, from: cached) {
 			return profiles
 		}
 		return nil
