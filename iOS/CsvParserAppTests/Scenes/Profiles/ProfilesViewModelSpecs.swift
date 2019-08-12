@@ -7,6 +7,7 @@ let profileStub = Profile(
 	id: "1",
 	firstName: "Anton",
 	lastName: "Makarevich",
+	issuesCount: 5,
 	birthDay: Date()
 )
 

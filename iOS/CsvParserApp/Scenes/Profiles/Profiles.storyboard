@@ -50,8 +50,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="issuesLabel" destination="oI7-Z3-pFj" id="bC8-pO-m2S"/>
                                             <outlet property="nameLabel" destination="99g-0g-lUY" id="DtS-bQ-RqH"/>
-                                            <outlet property="priceLabel" destination="oI7-Z3-pFj" id="Myq-2s-wkP"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

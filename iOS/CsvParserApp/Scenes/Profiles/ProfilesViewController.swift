@@ -10,7 +10,7 @@ class ProfilesViewController: UIViewController, ViewControllerProtocol {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+		self.title = "Issues"
 		productsTableView.delegate = self
 	}
 	

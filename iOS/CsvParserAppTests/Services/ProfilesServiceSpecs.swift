@@ -24,8 +24,8 @@ class CachingServiceMock: CachingServiceProtocol {
 	private var profilesToReturn: [Profile]?
 	private(set) var cacheProfilesCalledTimes: Int = 0
 	
-	func getCachedProfiles(completion: @escaping ([Profile]?) -> Void) {
-		completion(profilesToReturn)
+	func getCachedProfiles() -> [Profile]? {
+		return profilesToReturn
 	}
 	
 	func cacheProfiles(_: [Profile]) {

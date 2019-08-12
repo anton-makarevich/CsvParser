@@ -19,20 +19,17 @@ class ProfilesService: ProfilesServiceProtocol {
 
 extension ProfilesService {
 	func getProfiles(completion: @escaping (([Profile]) -> Void)) {
-		dependencies.cachingService.getCachedProfiles() { [weak self] cachedProfiles in
-			if let cachedProfiles = cachedProfiles {
-				completion(cachedProfiles)
-				return
-			} else {
-				guard let self = self,
-					let fileContent = self.dependencies.textFileReaderService.readFileContent(fileName: "") else {
-						completion([])
-						return
-					}
-				let profiles = self.dependencies.csvParserService.parseProfiles(profilesData: fileContent)
-				self.dependencies.cachingService.cacheProfiles(profiles)
-				completion(profiles)
-			}
+		if let cachedProfiles = dependencies.cachingService.getCachedProfiles() {
+			completion(cachedProfiles)
+			return
+		} else {
+			guard let fileContent = self.dependencies.textFileReaderService.readFileContent(fileName: "") else {
+					completion([])
+					return
+				}
+			let profiles = self.dependencies.csvParserService.parseProfiles(profilesData: fileContent)
+			self.dependencies.cachingService.cacheProfiles(profiles)
+			completion(profiles)
 		}
 	}
 }
