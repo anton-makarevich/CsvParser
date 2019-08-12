@@ -37,6 +37,17 @@ class ProfileViewModelSpecs: QuickSpec {
 				let expectedIssyesText = "0 issues"
 				expect(sut.issues).to(equal(expectedIssyesText))
 			}
+			
+			it("returns correctly formatter birthday") {
+				let calendar = Calendar.current
+				let today = Date()
+				let year = calendar.component(.year, from: today)
+				let month = calendar.component(.month, from: today)
+				let day = calendar.component(.day, from: today)
+				
+				let expectedBirthday = "\(String(format: "%02d", day))-\(String(format: "%02d", month))-\(year)"
+				expect(sut.birthday).to(equal(expectedBirthday))
+			}
 		}
 	}
 }

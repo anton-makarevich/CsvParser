@@ -5,7 +5,8 @@ class ProfileViewController: UIViewController, ViewControllerProtocol {
 	
 	var viewModel: ProfileViewModel?
 	
-	@IBOutlet weak var nameLabel: UILabel!
+	@IBOutlet weak var issuesLabel: UILabel!
+	@IBOutlet weak var birthdayLabel: UILabel!
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
@@ -18,8 +19,9 @@ class ProfileViewController: UIViewController, ViewControllerProtocol {
 	}
 	
 	func bindViewModel() {
-		nameLabel.text = viewModel?.name
 		title = viewModel?.name
+		issuesLabel.text = viewModel?.issues
+		birthdayLabel.text = viewModel?.birthday
 	}
 	
 	func unbindViewModel() {

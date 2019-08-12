@@ -16,4 +16,10 @@ class ProfileViewModel: ViewModelProtocol {
 		let issueText = self.profile.issuesCount == 1 ? "issue": "issues"
 		return "\(self.profile.issuesCount) \(issueText)"
 	}
+	
+	var birthday: String {
+		let formatter = DateFormatter()
+		formatter.dateFormat = "dd-MM-yyyy"
+		return formatter.string(from: profile.birthDay)
+	}
 }
