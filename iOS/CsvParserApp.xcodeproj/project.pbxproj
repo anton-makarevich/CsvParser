@@ -33,7 +33,6 @@
 		5BD5EAFA225C99FA0037F41D /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD5EAF9225C99FA0037F41D /* TableViewDataSource.swift */; };
 		5BD5EAFD225C9F700037F41D /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD5EAFC225C9F700037F41D /* BaseTableViewCell.swift */; };
 		5BD5EB00225CB7B60037F41D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD5EAFF225CB7B60037F41D /* ProfileViewController.swift */; };
-		5BE00B27230140A70077785C /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE00B26230140A70077785C /* Wrapper.swift */; };
 		5BE00B2923014C700077785C /* issues.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5BE00B2823014C700077785C /* issues.csv */; };
 		5BF6167722FC600400C492E2 /* CachingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6167622FC600400C492E2 /* CachingService.swift */; };
 		5BF6167922FD3EAE00C492E2 /* ProfilesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6167822FD3EAE00C492E2 /* ProfilesService.swift */; };
@@ -85,7 +84,6 @@
 		5BD5EAF9225C99FA0037F41D /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		5BD5EAFC225C9F700037F41D /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		5BD5EAFF225CB7B60037F41D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		5BE00B26230140A70077785C /* Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wrapper.swift; sourceTree = "<group>"; };
 		5BE00B2823014C700077785C /* issues.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = issues.csv; sourceTree = "<group>"; };
 		5BF6167622FC600400C492E2 /* CachingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingService.swift; sourceTree = "<group>"; };
 		5BF6167822FD3EAE00C492E2 /* ProfilesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesService.swift; sourceTree = "<group>"; };
@@ -265,7 +263,6 @@
 			isa = PBXGroup;
 			children = (
 				5B8BD547225B5DB300D3F4EA /* Profile.swift */,
-				5BE00B26230140A70077785C /* Wrapper.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -598,7 +595,6 @@
 				5B4FC3D5225619BB00D24FE9 /* ViewModelProtocol.swift in Sources */,
 				5B4FC3CA22560CE700D24FE9 /* CoordinatorProtocol.swift in Sources */,
 				5B4FC3CC22560D3000D24FE9 /* BaseCoordinator.swift in Sources */,
-				5BE00B27230140A70077785C /* Wrapper.swift in Sources */,
 				5B8BD55D225B6C0200D3F4EA /* ProfilesViewModel.swift in Sources */,
 				5B4FC3E822562A2600D24FE9 /* R.generated.swift in Sources */,
 				5B8BD55F225B6C1F00D3F4EA /* ProfilesViewController.swift in Sources */,
