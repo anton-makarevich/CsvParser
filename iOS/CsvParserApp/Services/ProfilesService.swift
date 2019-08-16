@@ -19,11 +19,12 @@ class ProfilesService: ProfilesServiceProtocol {
 
 extension ProfilesService {
 	func getProfiles(completion: @escaping (([Profile]) -> Void)) {
+		
 		if let cachedProfiles = dependencies.cachingService.getCachedProfiles() {
 			completion(cachedProfiles)
 			return
 		} else {
-			guard let fileContent = self.dependencies.textFileReaderService.readFileContent(fileName: "") else {
+			guard let fileContent = self.dependencies.textFileReaderService.readFileContent(fileName: "issues") else {
 					completion([])
 					return
 				}
