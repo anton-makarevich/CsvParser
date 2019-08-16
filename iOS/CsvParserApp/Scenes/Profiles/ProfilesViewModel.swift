@@ -1,3 +1,5 @@
+import Foundation
+
 final class ProfilesViewModel: ViewModelProtocol {
 	typealias Dependencies = HasProfilesService
 	
@@ -12,10 +14,14 @@ final class ProfilesViewModel: ViewModelProtocol {
 	
 	func getProfiles() {
 		isLoading.value = true
-		dependencies.profilesService.getProfiles { [weak self] result in
+		DispatchQueue.global(qos: .background).async { [weak self] in
 			guard let strongSelf = self else { return }
-			strongSelf.isLoading.value = false
-			strongSelf.profiles.value = result.map { ProfileViewModel(profile: $0) }
+			strongSelf.dependencies.profilesService.getProfiles { result in
+				DispatchQueue.main.async {
+					strongSelf.isLoading.value = false
+					strongSelf.profiles.value = result.map { ProfileViewModel(profile: $0) }
+				}
+			}
 		}
 	}
 	
